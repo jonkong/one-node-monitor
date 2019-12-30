@@ -31,12 +31,12 @@ module.exports.nodeOfflineEmail = (offLineNodes) => {
 };
 
 module.exports.nodeBalancesEmail = (ourNodes, price) => {
-	var chicagoTime = moment.tz(new Date(), "America/Chicago").format("YYYY-MM-DD h:m:s");
+	var chicagoTime = moment.tz(new Date(), "America/Chicago").format("YYYY-MM-DD HH:mm");
 	let mailText = [];
 	let totalBalance = 0;
 	ourNodes.forEach(function(ourNode){
-		totalBalance += parseFloat(ourNode.totalBalance);
-		mailText.push(`address: ${ourNode.address}, shard : ${ourNode.shard}, totalBalance : ${ourNode.totalBalance}`);
+		totalBalance += parseFloat(ourNode.balance);
+		mailText.push(`address: ${ourNode.address}, totalBalance : ${ourNode.balance}`);
 	});
 	let usdtBalance = Math.round(price * totalBalance * 100) / 100;
 	mailText.push(`Our TotalBalance : ${totalBalance}`);
