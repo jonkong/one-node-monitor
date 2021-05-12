@@ -6,7 +6,7 @@
   "Author": "Jonathan Kong",
   "dependencies": {
     "moment-timezone": "^0.5.26",
-    "nodemailer": "^6.3.0",
+    "nodemailer": "^6.4.16",
     "request": "^2.88.0"
   }
 }
